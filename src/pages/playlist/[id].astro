@@ -8,10 +8,12 @@ const {id} = Astro.params
 const playlist = allPlaylists.find(playlist => playlist.id === id)
 const thisplaylistsongs = songs.filter(song => song.albumId === parseInt(playlist?.id))
 const artistString = playlist?.artists.join(', ')
+
 ---
 <Layout title="Clonify">
 	<div
-    class="relative h-full p-4 flex flex-col bg-zinc-900 overflow-x-hidden"
+    style={{background: playlist?.color.accent}}
+    class=`relative h-full p-4 flex flex-col overflow-x-hidden`
     id="playlist-container"
     transition:name=`playlist ${playlist?.id} box`>
     <header class="flex flex-row">
