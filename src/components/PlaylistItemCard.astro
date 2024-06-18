@@ -1,5 +1,6 @@
 ---
 import type { Playlist } from "../lib/data";
+import { CardPlayButton } from "./CardPlayButton";
 
 interface Props {
     playlist: Playlist
@@ -9,16 +10,28 @@ const { id, cover, title, artists, color } = playlist
 
 const artistString = artists.join(', ')
 ---
-<a class="playlist-item transition-all duration-500 shadow-lg flex relative p-2 overflow-hidden gap-5 px-3 rounded-md hover:scale-105 hover:shadow-2xl w-40 flex-col" 
-href={`/playlist/${id}`} transition:name=`playlist ${id} box`>
+<section class="group relative">
+    <div
+    class=`absolute right-4 bottom-20 translate-y-4
+    transition-all duration-500 opacity-0
+    group-hover:translate-y-0 group-hover:opacity-100
+    z-10
+    `
+    >
+        <CardPlayButton id={id} client:visible />
+    </div>
+    <a style={{backgroundColor: `${color.dark}`}} class="playlist-item transition-all duration-500 shadow-lg flex p-2 overflow-hidden gap-5 px-3 rounded-md group-hover:scale-105 hover:shadow-2xl hover:bg-zinc-500/10 w-40 flex-col" 
+        href={`/playlist/${id}`} transition:name=`playlist ${id} box`>
     <picture class="aspect-square w-full h-auto">
         <img class="w-full h-auto rounded-md" 
         src={cover} 
         alt={`Cover of ${title} by ${artistString}`}
         transition:name=`playlist ${id} image`>
     </picture>
+
     <div class="flex flex-col flex-auto truncate">
         <h4 class="font-bold h-6 w-auto text-sm" transition:name=`playlist ${id} title`>{title} </h4>
         <span class="h-6 w-auto text-xs text-gray-300" transition:name=`playlist ${id} artists`>{artistString}</span>
     </div> 
 </a>
+</section>

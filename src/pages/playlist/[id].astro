@@ -1,34 +1,42 @@
 ---
-import SideMenuCard from "../../components/SideMenuCard.astro";
+import { CardPlayButton } from "../../components/CardPlayButton";
+import MusicsTable from "../../components/MusicsTable.astro";
 import Layout from "../../layouts/Layout.astro"
 import { allPlaylists, playlists, songs } from "../../lib/data";
 
 const {id} = Astro.params
 
 const playlist = allPlaylists.find(playlist => playlist.id === id)
-const thisplaylistsongs = songs.filter(song => song.albumId === parseInt(playlist?.id))
+const thisplaylistsongs = songs.filter(song => song.albumId === parseInt(playlist?.albumId))
 const artistString = playlist?.artists.join(', ')
 
 ---
 <Layout title="Clonify">
 	<div
     style={{background: playlist?.color.accent}}
-    class=`relative h-full p-4 flex flex-col overflow-x-hidden`
+    class=`relative p-4 flex flex-col overflow-x-hidden`
     id="playlist-container"
     transition:name=`playlist ${playlist?.id} box`>
-    <header class="flex flex-row">
+    <header class="flex flex-row">    
         <picture class="aspect-square w-52 h-52" 
         transition:name=`playlist ${playlist?.id} image`>
-            <img src={playlist?.cover} alt={`Playlist of ${playlist?.title}`}>
+            <img class="rounded-md" src={playlist?.cover} alt={`Playlist of ${playlist?.title}`}>
         </picture>
-        <div class="flex flex-col gap-5">
-            <h4 class="font-bold h-6 w-auto text-5xl ml-5 mt-5" transition:name=`playlist ${playlist?.id} title`>{playlist?.title}</h4>
-            <p class="h4 w-auto text-xl mt-4 ml-7" transition:name=`playlist ${playlist?.id} artist`>{artistString}</p>
+        <div class="flex flex-col items-start gap-1 ml-6">
+            <h2 class="mb-0 mt-10">Playlist</h2>
+            <h4 class="font-bold h-6 w-auto text-5xl mt-0" transition:name=`playlist ${playlist?.id} title`>{playlist?.title}</h4>
+            <div class="flex flex-row items-center justify-between mt-16 gap-20">
+                <div class="flex flex-col items-center">
+                    <span class="h4 w-auto text-sm" transition:name=`playlist ${playlist?.id} artists`>{artistString}</span>
+                    <span class="h4 w-auto text-sm font-bold">{thisplaylistsongs.length} Canciones</span>
+                </div>
+                <CardPlayButton id={id} client:visible />
+            </div>
         </div>
     </header>
-        <div class="relative z-10 px-6 flex gap-4 flex-wrap">
-            {}
+        <div class="flex flex-col justify-start">
+            <MusicsTable songs={thisplaylistsongs}/>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 -z-10"></div>
     </div>
 </Layout>

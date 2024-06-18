@@ -64,6 +64,24 @@ export const playlists: Playlist[] = [
       "https://f4.bcbits.com/img/a0363730459_16.jpg",
     artists: ["WFS", "Nadav Cohen"],
   },
+  {
+    id: '7',
+    albumId: 7,
+    title: "Playlist Mock",
+    color: colors.teal,
+    cover:
+      "https://f4.bcbits.com/img/a0363730459_16.jpg",
+    artists: ["Bucki", "Eminem"],
+  },
+  {
+    id: '8',
+    albumId: 8,
+    title: "Playlist Mock #2",
+    color: colors.emerald,
+    cover:
+      "https://f4.bcbits.com/img/a2793859494_16.jpg",
+    artists: ["Bucki", "Eminem"],
+  },
 ];
 
 export const morePlaylists = playlists.map((item) => ({

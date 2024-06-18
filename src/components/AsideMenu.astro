@@ -25,10 +25,12 @@ import SideMenuCard from "./SideMenuCard.astro"
     </div>
     <div class="bg-zinc-900 rounded-lg p-2 flex-1">
         <ul>
-            <SideMenuItem href="/library">
+            <SideMenuItem href="/">
                 <LibraryIcon/>
                 Your Library
             </SideMenuItem>
+        </ul>
+        <ul style={{scrollbarWidth: "none"}} class="max-h-96 overflow-hidden overflow-y-auto">
             {
                 playlists.map(playlist => <SideMenuCard playlist={playlist}/>)
             }
