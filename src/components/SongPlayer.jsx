@@ -16,8 +16,15 @@ export function SongPlayer({ song }) {
             setIsPlaying(false)
             return
         }
-        setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
-        setIsPlaying(true)
+        if(currentMusic.song === null){
+            setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
+            setIsPlaying(true)
+            return
+        }
+        if(currentMusic.song.id === song.id && currentMusic.playlist.id === song.albumId){
+            setIsPlaying(true)
+            return
+        }
     }
     return (
         <button style={{backgroundColor: color}} 

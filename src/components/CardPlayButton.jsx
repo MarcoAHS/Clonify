@@ -18,7 +18,6 @@ export function CardPlayButton ({ id, size = 'small' }) {
         setIsPlaying(false)
         return
     }
-    // setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
     setCurrentMusic({songs: playListSongs, playlist: { id: thisPlaylist }, song: playListSongs[0]})
     setIsPlaying(true)
   }
