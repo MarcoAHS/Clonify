@@ -25,6 +25,9 @@ export function SongPlayer({ song }) {
             setIsPlaying(true)
             return
         }
+            setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
+            setIsPlaying(true)
+            return
     }
     return (
         <button style={{backgroundColor: color}} 

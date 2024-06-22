@@ -14,7 +14,7 @@ const artistString = playlist?.artists.join(', ')
 <Layout title="Clonify">
 	<div
     style={{background: playlist?.color.accent}}
-    class=`relative p-4 flex flex-col overflow-x-hidden`
+    class=`relative p-4 flex flex-col overflow-x-hidden h-full z-[2]`
     id="playlist-container"
     transition:name=`playlist ${playlist?.id} box`>
     <header class="flex flex-row">    
@@ -24,8 +24,8 @@ const artistString = playlist?.artists.join(', ')
         </picture>
         <div class="flex flex-col items-start gap-1 ml-6">
             <h2 class="mb-0 mt-10">Playlist</h2>
-            <h4 class="font-bold h-6 w-auto text-5xl mt-0" transition:name=`playlist ${playlist?.id} title`>{playlist?.title}</h4>
-            <div class="flex flex-row items-center justify-between mt-16 gap-20">
+            <h4 class="font-bold h-6 w-auto text-xl lg:text-5xl mt-0" transition:name=`playlist ${playlist?.id} title`>{playlist?.title}</h4>
+            <div class="flex flex-row items-center justify-between mt-2 lg:mt-16 gap-20">
                 <div class="flex flex-col items-center">
                     <span class="h4 w-auto text-sm" transition:name=`playlist ${playlist?.id} artists`>{artistString}</span>
                     <span class="h4 w-auto text-sm font-bold">{thisplaylistsongs.length} Canciones</span>

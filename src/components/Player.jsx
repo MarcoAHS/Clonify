@@ -70,14 +70,14 @@ const SongControl = ({ audio }) => {
   const duration = audio?.current?.duration ?? 0
 
   return (
-    <div className="flex gap-x-3 text-xs pt-2">
+    <div className="flex gap-x-3 text-xs pt-2 w-[80%]">
       <span className="opacity-50 w-12 text-right">{formatTime(currentTime)}</span>
 
       <Slider
         value={[currentTime]}
         max={audio?.current?.duration ?? 0}
         min={0}
-        className="w-[400px]"
+        className="w-[200px] lg:w-[400px]"
         onValueChange={(value) => {
           const [newCurrentTime] = value
           audio.current.currentTime = newCurrentTime
@@ -190,12 +190,12 @@ export function Player () {
   }
 
   return (
-    <div className="flex flex-row justify-between w-full px-1 z-50">
-      <div className="w-[200px]">
+    <div className="flex flex-row justify-between w-full p-2 z-50">
+      <div className="w-[100px] md:w-[200px] hidden lg:block">
         <CurrentSong {...currentMusic.song} />
       </div>
 
-      <div className="grid place-content-center gap-4 flex-1">
+      <div className="grid place-content-center gap-4 flex-1 w-[150px] md:w-auto">
         <div className="flex justify-center flex-col items-center">
           <div className="flex flex-row justify-center items-center gap-4">
             <button style={{color: "black"}} className="bg-white rounded-full p-2 w-10 h-10" onClick={handleLeft}>
@@ -214,7 +214,7 @@ export function Player () {
 
       </div>
 
-      <div className="grid place-content-center w-[200px]">
+      <div className="grid place-content-center w-[100px] md:w-[200px]">
         <VolumeControl />
       </div>
     </div>

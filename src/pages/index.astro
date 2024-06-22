@@ -7,13 +7,13 @@ import { playlists } from '../lib/data';
 
 <Layout title="Clonify">
 	<div
-    class="relative transition-all duration-1000 overflow-hidden p-4 bg-green-600"
+    style={{scrollbarWidth: "none"}}
+    class="transition-all duration-1000 overflow-auto p-4 bg-green-600 h-full"
     id="playlist-container">
     <h2 class="text-2xl mb-4 font-bold">Good Morning</h2>
-        <div class="relative z-10 px-6 flex gap-4 flex-wrap">
+        <div class="relative z-10 px-6 flex gap-4 flex-wrap justify-center lg:justify-start">
             {playlists.map(playlist => <PlaylistItemCard playlist={playlist}/>)}
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-800/90"></div>
     </div>
 </Layout>
 
