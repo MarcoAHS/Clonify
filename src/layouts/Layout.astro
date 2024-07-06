@@ -22,14 +22,14 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div id="app" class="relative h-screen w-screen p-2 gap-2">
-			<aside class="[grid-area:aside] flex-col flex">
+			<aside class="[grid-area:aside] flex-col flex w-24 max-w-80 lg:w-full">
 				<AsideMenu/>
 			</aside>
 			<main class="[grid-area:main] relative w-full rounded-lg bg-zinc-900">
 				<slot />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-800/90"></div>
 			</main>
-			<footer class="[grid-area:footer] min-h-[100px] bg-zinc-900 p-4 md:block md:w-full md:z-[2]">
+			<footer class="[grid-area:footer] min-h-[100px] bg-zinc-900 p-4 lg:w-full lg:z-[2]">
         <Player client:load transition:name="media-player" transition:persist/>
       </footer>
 		</div>
@@ -38,19 +38,11 @@ const { title } = Astro.props;
 <style>
  #app{
 	display: grid;
-	grid-template-areas: 
-		"main main main"
-		"footer footer footer"
-    "aside aside aside";
-	grid-template-columns: 1fr;
-	grid-template-rows: 80vh 10vh 10vh;
-  @media (min-width: 968px) {
-    grid-template-areas: 
-      "aside main main"
-      "footer footer footer";
-    grid-template-columns: 300px auto;
-    grid-template-rows: 84% 1fr;
-  }
+  grid-template-areas: 
+    "aside main main"
+    "footer footer footer";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 84% 1fr;
  }
 </style>
 <style is:global>

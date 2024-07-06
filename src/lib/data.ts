@@ -73,6 +73,33 @@ export const playlists: Playlist[] = [
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
     artists: ["Bucki", "Eminem"],
   },
+  {
+    id: '8',
+    albumId: 8,
+    title: "All Songs",
+    color: colors.teal,
+    cover:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
+    artists: ["Bucki", "Eminem"],
+  },
+  {
+    id: '9',
+    albumId: 9,
+    title: "All Songs",
+    color: colors.teal,
+    cover:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
+    artists: ["Bucki", "Eminem"],
+  },
+  {
+    id: '10',
+    albumId: 10,
+    title: "All Songs",
+    color: colors.teal,
+    cover:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
+    artists: ["Bucki", "Eminem"],
+  },
 ];
 
 export const morePlaylists = playlists.map((item) => ({
@@ -321,231 +348,6 @@ export const songs: Song[] = [
   {
     "id": 5,
     "albumId": 5,
-    "title": "Night's End",
-    "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "4:20"
-  },
-  {
-    "id": 1,
-    "albumId": 7,
-    "title": "Moonlit Walk",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:12"
-  },
-  {
-    "id": 2,
-    "albumId": 7,
-    "title": "Coffee Daze",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "4:07"
-  },
-  {
-    "id": 3,
-    "albumId": 7,
-    "title": "Skyline Serenade",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:50"
-  },
-  {
-    "id": 4,
-    "albumId": 7,
-    "title": "Urban Echoes",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:30"
-  },
-  {
-    "id": 5,
-    "albumId": 7,
-    "title": "Night's End",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "4:20"
-  },
-  {
-    "id": 6,
-    "albumId": 7,
-    "title": "Silent Rain",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-    "artists": ["Urban Nocturne"],
-    "album": "Midnight Tales",
-    "duration": "3:40"
-  },
-  {
-    "id": 7,
-    "albumId": 7,
-    "title": "Lost Pages",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-    "artists": ["Urban Nocturne"],
-    "album": "Midnight Tales",
-    "duration": "3:20"
-  },
-  {
-    "id": 8,
-    "albumId": 7,
-    "title": "Midnight Tales",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-    "artists": ["Urban Nocturne"],
-    "album": "Midnight Tales",
-    "duration": "3:50"
-  },
-  {
-    "id": 9,
-    "albumId": 7,
-    "title": "City Lights",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-    "artists": ["Urban Nocturne"],
-    "album": "Midnight Tales",
-    "duration": "3:30"
-  },
-  {
-    "id": 10,
-    "albumId": 7,
-    "title": "Night Drive",
-    "image": `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
-    "artists": ["Urban Nocturne"],
-    "album": "Midnight Tales",
-    "duration": "4:20"
-  },
-  {
-    "id": 11,
-    "albumId": 7,
-    "title": "Lunar",
-    "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:40"
-  },
-  {
-    "id": 12,
-    "albumId": 7,
-    "title": "Go go go!",
-    "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:20"
-  },
-  {
-    "id": 13,
-    "albumId": 7,
-    "title": "Keep focus!",
-    "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "2:40"
-  },
-  {
-    "id": 14,
-    "albumId": 7,
-    "title": "JavaScript is the way",
-    "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:10"
-  },
-  {
-    "id": 15,
-    "albumId": 7,
-    "title": "No more TypeScript for me",
-    "image": `https://f4.bcbits.com/img/a1435058381_65.jpg`,
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "2:10"
-  },
-  {
-    "id": 16,
-    "albumId": 7,
-    "title": "Lunar",
-    "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:40"
-  },
-  {
-    "id": 17,
-    "albumId": 7,
-    "title": "Go go go!",
-    "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:20"
-  },
-  {
-    "id": 18,
-    "albumId": 7,
-    "title": "Keep focus!",
-    "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "2:40"
-  },
-  {
-    "id": 19,
-    "albumId": 7,
-    "title": "JavaScript is the way",
-    "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "3:10"
-  },
-  {
-    "id": 20,
-    "albumId": 7,
-    "title": "No more TypeScript for me",
-    "image": "https://f4.bcbits.com/img/a1962013209_16.jpg",
-    "artists": ["Tenno"],
-    "album": "Study Session",
-    "duration": "2:10"
-  },
-  {
-    "id": 21,
-    "albumId": 7,
-    "title": "Moonlit Walk",
-    "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:12"
-  },
-  {
-    "id": 22,
-    "albumId": 7,
-    "title": "Coffee Daze",
-    "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "4:07"
-  },
-  {
-    "id": 23,
-    "albumId": 7,
-    "title": "Skyline Serenade",
-    "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:50"
-  },
-  {
-    "id": 24,
-    "albumId": 7,
-    "title": "Urban Echoes",
-    "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
-    "artists": ["LoFi Dreamer"],
-    "album": "Chill Lo-Fi Music",
-    "duration": "3:30"
-  },
-  {
-    "id": 25,
-    "albumId": 7,
     "title": "Night's End",
     "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
     "artists": ["LoFi Dreamer"],

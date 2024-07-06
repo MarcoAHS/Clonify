@@ -146,21 +146,15 @@ export function Player () {
   }, [volume])
 
   useEffect(() => {
-    const { song, playlist, songs } = currentMusic
+    const { song, songs } = currentMusic
     if (song) {
       let src = ''
-      if(playlist?.id == 7){
-        const album = Math.ceil(song.id/5)
-        const now = song.id - ((album - 1) * 5)
-        src = `/music/${album}/0${now}.mp3`
-      } else{
-        src = `/music/${playlist?.id}/0${song.id}.mp3`
-      }
+      src = `/music/${song.albumId}/0${song.id}.mp3`
       audioRef.current.src = src
       audioRef.current.volume = volume
       audioRef.current.play()
     }
-  }, [currentMusic])
+  }, [currentMusic.song])
 
   const handleClick = () => {
     if(!currentMusic.song){
@@ -172,26 +166,30 @@ export function Player () {
     if(currentMusic.song === null){
       return
     }
-    const prevSong  = currentMusic.songs[currentMusic.song.id - 2]
-    if(!prevSong){
+    const nextSongId = currentMusic.songs.indexOf(currentMusic.song)
+    const nextSong = currentMusic.songs[nextSongId - 1]
+    if(!nextSong){
       return
     }
-    setCurrentMusic({ ...currentMusic ,song: prevSong })
+    setCurrentMusic({ ...currentMusic, song: nextSong })
+    setIsPlaying(true)
   }
   const handleRight = () => {
     if(currentMusic.song === null){
       return
     }
-    const nextSong = currentMusic.songs[currentMusic.song.id]
+    const nextSongId = currentMusic.songs.indexOf(currentMusic.song)
+    const nextSong = currentMusic.songs[nextSongId + 1]
     if(!nextSong){
       return
     }
-    setCurrentMusic({ ...currentMusic ,song: nextSong })
+    setCurrentMusic({ ...currentMusic, song: nextSong })
+    setIsPlaying(true)
   }
 
   return (
     <div className="flex flex-row justify-between w-full p-2 z-50">
-      <div className="w-[100px] md:w-[200px] hidden lg:block">
+      <div className="w-[100px] md:w-[200px]">
         <CurrentSong {...currentMusic.song} />
       </div>
 

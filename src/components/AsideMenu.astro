@@ -11,26 +11,26 @@ import SideMenuCard from "./SideMenuCard.astro"
 ---
 
 <nav class="flex flex-col flex-1 gap-2">
-    <div class="bg-zinc-900 rounded-lg p-2">
-        <ul class="w-full flex flex-row lg:flex-col items-center justify-evenly pt-3">
+    <div class="bg-zinc-900 rounded-lg p-1 lg:p-2">
+        <ul class="w-full flex flex-col items-center justify-evenly pt-1 lg:pt-3">
             <SideMenuItem href="/">
                 <HomeIcon/>
-                Home
+                <p class="hidden lg:block">Home</p>
             </SideMenuItem>
             <SideMenuItem href="/">
                 <SearchIcon/>
-                Search
+                <p class="hidden lg:block">Search</p>
             </SideMenuItem>
         </ul>
     </div>
-    <div class="bg-zinc-900 rounded-lg p-2 flex-1 hidden lg:flex lg:flex-col">
+    <div class="bg-zinc-900 rounded-lg p-2 flex-1 lg:flex lg:flex-col">
         <ul>
             <SideMenuItem href="/">
                 <LibraryIcon/>
-                Your Library
+                <p class="hidden lg:block">Your Library</p>
             </SideMenuItem>
         </ul>
-        <ul style={{scrollbarWidth: "none"}} class="overflow-hidden overflow-y-auto lg:max-h-[35vh]">
+        <ul style={{scrollbarWidth: "none"}} class="overflow-hidden overflow-y-auto max-h-[64vh]">
             {
                 playlists.map(playlist => <SideMenuCard playlist={playlist}/>)
             }

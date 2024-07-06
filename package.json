@@ -1,7 +1,14 @@
 {
   "name": "clonify",
+  "description": "A clone of spotify with educational purposes, made with Astro, React, TailwindCSS, Zustand and Typescript",
   "type": "module",
   "version": "0.0.1",
+  "keywords": ["Astro", "Clon de Spotify", "Zustand", "React", "Tailwind"],
+  "author": "marcoahs",
+  "homepage": "https://elaborate-sopapillas-9fc246.netlify.app/",
+  "repository": {
+    "url": "https://github.com/MarcoAHS/Clonify"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

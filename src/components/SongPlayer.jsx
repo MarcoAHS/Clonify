@@ -8,7 +8,7 @@ export function SongPlayer({ song }) {
         setIsPlaying,
         setCurrentMusic
       } = usePlayerStore(state => state)
-    const isPlayingSong = isPlaying && currentMusic?.playlist.id === song.albumId && currentMusic.song.id === song.id
+    const isPlayingSong = isPlaying && currentMusic?.song.albumId === song.albumId && currentMusic.song.id === song.id
     const thisplaylistsongs = songs.filter(cancion => cancion.albumId === song.albumId)
     const color = playlists.filter(playlist => playlist.albumId === song.albumId)[0].color.dark
     const handleClick = () => {
@@ -17,7 +17,8 @@ export function SongPlayer({ song }) {
             return
         }
         if(currentMusic.song === null){
-            setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
+            console.log({songs: thisplaylistsongs, song: thisplaylistsongs[song.id - 1]})
+            setCurrentMusic({songs: thisplaylistsongs, song: thisplaylistsongs[song.id - 1]})
             setIsPlaying(true)
             return
         }
@@ -25,7 +26,7 @@ export function SongPlayer({ song }) {
             setIsPlaying(true)
             return
         }
-            setCurrentMusic({songs: thisplaylistsongs, playlist: { id: song.albumId }, song: thisplaylistsongs[song.id - 1]})
+            setCurrentMusic({songs: thisplaylistsongs, song: thisplaylistsongs[song.id - 1]})
             setIsPlaying(true)
             return
     }

@@ -1,6 +1,8 @@
 ---
 import { type Song } from "../lib/data"
 import { SongPlayer } from "./SongPlayer"
+import { SongPlayButton } from "./SongPlayButton"
+
 interface Props {
   songs: Song[]
 }
@@ -8,7 +10,7 @@ interface Props {
 const { songs } = Astro.props
 ---
 
-<div style={{scrollbarWidth: "none"}} class="h-[220px] lg:h-[320px] overflow-y-auto w-full table-fixed relative">
+<div style={{scrollbarWidth: "none"}} class="h-[500px] overflow-y-auto w-full table-fixed relative">
     <table class="text-left divide-y divide-gray-500/20 absolute w-full">
         <thead class="sticky top-0">
           <tr class="text-zinc-700 text-sm">
@@ -16,6 +18,7 @@ const { songs } = Astro.props
             <th class="px-4 py-2 font-bold">Título</th>
             <th class="px-4 py-2 font-bold">Álbum</th>
             <th class="px-4 py-2 font-bold">Time</th>
+            <th class="px-4 py-2 font-bold text-center">Add to queue</th>
           </tr>
         </thead>
       
@@ -37,6 +40,7 @@ const { songs } = Astro.props
             </td>
             <td class="px-4 py-2">{song.album}</td>
             <td class="px-4 py-2 rounded-tr-lg rounded-br-lg">{song.duration}</td>
+            <td class="px-4 py-2 w-44 text-center"><SongPlayButton client:load song={song}/></td>
         </tr>
             ))
           }

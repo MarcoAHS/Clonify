@@ -12,13 +12,13 @@ export function CardPlayButton ({ id, size = 'small' }) {
   const playListSongs = songs.filter(song => song.albumId == parseInt(id)) 
   const thisPlaylist = parseInt(playlists.find(playlist => playlist.id === id).id)
   const color = playlists.filter(playlist => playlist.id === id)[0].color.dark
-  const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === parseInt(id)
+  const isPlayingPlaylist = isPlaying && currentMusic?.song.albumId === parseInt(id)
   const handleClick = () => {
     if(isPlayingPlaylist){
         setIsPlaying(false)
         return
     }
-    setCurrentMusic({songs: playListSongs, playlist: { id: thisPlaylist }, song: playListSongs[0]})
+    setCurrentMusic({songs: playListSongs, song: playListSongs[0]})
     setIsPlaying(true)
   }
 
