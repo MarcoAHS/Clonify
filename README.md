@@ -5,8 +5,9 @@
 <img src="./public/image.webp">
 </a>
 </div>
+
 ## Descripcion
-<p>Creado con Fines didacticos, utilizando Astro, React, Tailwind y Zustand</p>
+Creado con Fines didacticos, utilizando Astro, React, Tailwind y Zustand
 
 ## Funcionalidades
 -Reproductor de Musica con estado Global y Persistente
