@@ -14,20 +14,19 @@ const artistString = playlist?.artists.join(', ')
 <Layout title="Clonify">
 	<div
     style={{background: playlist?.color.accent}}
-    class=`relative p-4 flex flex-col overflow-x-hidden h-full z-[2] w-[85vw]`
-    id="playlist-container"
-    transition:name=`playlist ${playlist?.id} box`>
+    class=`relative p-4 flex flex-col overflow-hidden h-full z-[2] w-[84vw]`
+    id="playlist-container">
     <header class="flex flex-row">    
-        <picture class="aspect-square w-52 h-52" 
-        transition:name=`playlist ${playlist?.id} image`>
-            <img class="rounded-md" src={playlist?.cover} alt={`Playlist of ${playlist?.title}`}>
+        <picture class="aspect-square w-52 h-52"
+        >
+            <img style={{viewTransitionName: `playlist ${playlist?.id} image`}} class="rounded-md" src={playlist?.cover} alt={`Playlist of ${playlist?.title}`}>
         </picture>
-        <div class="flex flex-col items-start gap-1 ml-6">
+        <div class="flex flex-col items-start gap-0 md:gap-1 ml-2 md:ml-6">
             <h2 class="mb-0 mt-10">Playlist</h2>
-            <h4 class="font-bold h-6 w-auto text-xl lg:text-5xl mt-0" transition:name=`playlist ${playlist?.id} title`>{playlist?.title}</h4>
-            <div class="flex flex-row items-center justify-between mt-2 lg:mt-16 gap-20">
-                <div class="flex flex-col items-center">
-                    <span class="h4 w-auto text-sm" transition:name=`playlist ${playlist?.id} artists`>{artistString}</span>
+            <h4 class="font-bold w-auto overflow-hidden text-sm md:text-xl lg:text-5xl mt-0">{playlist?.title}</h4>
+            <div class="flex flex-col md:flex-row items-center justify-between mt-1 md:mt-2 lg:mt-16 gap-14 md:gap-20">
+                <div class="flex flex-col gap-y-4 items-center">
+                    <span class="h4 w-auto text-sm">{artistString}</span>
                     <span class="h4 w-auto text-sm font-bold">{thisplaylistsongs.length} Canciones</span>
                 </div>
                 <CardPlayButton id={id} client:visible />

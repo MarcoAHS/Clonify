@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Buscador } from '../components/Buscador'
+import { playlists } from '../lib/data';
+---
+
+<Layout title="Clonify">
+	<div
+    style={{scrollbarWidth: "none"}}
+    class="transition-all duration-1000 overflow-auto p-4 bg-green-600 h-full"
+    id="playlist-container">
+        <Buscador client:load playlists={playlists}/>
+    </div>
+</Layout>
+
+<style>
+
+</style>

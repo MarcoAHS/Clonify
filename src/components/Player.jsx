@@ -110,7 +110,7 @@ const VolumeControl = () => {
   }
 
   return (
-    <div className="flex justify-center gap-x-2 text-white">
+    <div className="flex justify-center gap-x-1 md:gap-x-2 text-white">
       <button className="opacity-70 hover:opacity-100 transition" onClick={handleClickVolumen}>
         {isVolumeSilenced ? <VolumeSilence /> : <Volume />}
       </button>
@@ -120,7 +120,7 @@ const VolumeControl = () => {
         max={100}
         min={0}
         value={[volume * 100]}
-        className="w-[95px]"
+        className="w-[45px]"
         onValueChange={(value) => {
           const [newVolume] = value
           const volumeValue = newVolume / 100
@@ -188,14 +188,14 @@ export function Player () {
   }
 
   return (
-    <div className="flex flex-row justify-between w-full p-2 z-50">
-      <div className="w-[100px] md:w-[200px]">
+    <div className="flex flex-row justify-between w-full p-0 md:p-2 z-50">
+      <div className="hidden md:block w-[200px] h-[80px]">
         <CurrentSong {...currentMusic.song} />
       </div>
 
-      <div className="grid place-content-center gap-4 flex-1 w-[150px] md:w-auto">
-        <div className="flex justify-center flex-col items-center">
-          <div className="flex flex-row justify-center items-center gap-4">
+      <div className="grid place-content-center gap-4 flex-1 w-[150px] md:w-auto mr-8">
+        <div className="flex justify-center flex-col items-center gap-2">
+          <div className="flex flex-row justify-center items-center gap-2 md:gap-4">
             <button style={{color: "black"}} className="bg-white rounded-full p-2 w-10 h-10" onClick={handleLeft}>
               &lt;
             </button>
@@ -212,7 +212,7 @@ export function Player () {
 
       </div>
 
-      <div className="grid place-content-center w-[100px] md:w-[200px]">
+      <div className="grid place-content-center m-auto w-[60px] h-[60px] md:w-[200px]">
         <VolumeControl />
       </div>
     </div>

@@ -10,11 +10,11 @@ interface Props {
 const { songs } = Astro.props
 ---
 
-<div style={{scrollbarWidth: "none"}} class="h-[500px] overflow-y-auto w-full table-fixed relative">
+<div style={{scrollbarWidth: "none"}} class="h-[250px] md:h-[500px] overflow-y-auto table-fixed relative w-[70vw]">
     <table class="text-left divide-y divide-gray-500/20 absolute w-full">
         <thead class="sticky top-0">
           <tr class="text-zinc-700 text-sm">
-            <th class="px-4 py-2 font-bold">#</th>
+            <th class="hidden md:block px-4 py-2 font-bold">#</th>
             <th class="px-4 py-2 font-bold">Título</th>
             <th class="px-4 py-2 font-bold">Álbum</th>
             <th class="px-4 py-2 font-bold">Time</th>
@@ -26,7 +26,7 @@ const { songs } = Astro.props
           {
             songs.map((song, index) => (
             <tr class="group border-spacing-0 text-gray-300 text-sm font-light hover:bg-white/10 overflow-hidden transition duration-300 border-b-2 border-zinc-400">
-            <td class="px-4 py-2 rounded-tl-lg rounded-bl-lg w-5">
+            <td class="hidden md:table-cell px-4 py-2 rounded-tl-lg rounded-bl-lg w-5">
                 <SongPlayer client:load song={song}/>
             </td>
             <td class="px-4 py-2 flex gap-3 flex-col lg:flex-row">

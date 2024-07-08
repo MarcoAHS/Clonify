@@ -16,6 +16,7 @@ Creado con Fines didacticos, utilizando Astro, React, Tailwind y Zustand
 - Manejo de Volumen
 - Agregar canciones individualmente a la Queve
 - Diseño Responsive
+- Busqueda Funcional
 - Aun quiero añadirle un par mas
 
 ## Demo
