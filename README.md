@@ -15,6 +15,7 @@ Creado con Fines didacticos, utilizando Astro, React, Tailwind y Zustand
 - Transisiones entre paginas utilizando las imagenes de los album
 - Manejo de Volumen
 - Agregar canciones individualmente a la Queve
+- Random Order de la Queve/Playlist (Se puede hacer una ves, y si agregas otra cancion se reinicia)
 - Diseño Responsive
 - Busqueda Funcional
 - Aun quiero añadirle un par mas

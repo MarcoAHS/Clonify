@@ -1,7 +1,6 @@
 import { usePlayerStore } from "../store/playStore"
 import { useEffect, useRef, useState } from "react"
 import { Slider } from "./Slider"
-import { playlists } from "../lib/data"
 
 export const Pause = ({ className }) => (
   <svg className={className} role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"><path d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
@@ -110,7 +109,7 @@ const VolumeControl = () => {
   }
 
   return (
-    <div className="flex justify-center gap-x-1 md:gap-x-2 text-white">
+    <div className="flex justify-center gap-x-1 md:gap-x-3 text-white">
       <button className="opacity-70 hover:opacity-100 transition" onClick={handleClickVolumen}>
         {isVolumeSilenced ? <VolumeSilence /> : <Volume />}
       </button>
@@ -120,7 +119,7 @@ const VolumeControl = () => {
         max={100}
         min={0}
         value={[volume * 100]}
-        className="w-[45px]"
+        className="w-[45px] md:w-[80px] lg:w-[120px]"
         onValueChange={(value) => {
           const [newVolume] = value
           const volumeValue = newVolume / 100
@@ -134,6 +133,7 @@ const VolumeControl = () => {
 export function Player () {
   const { currentMusic, isPlaying, setIsPlaying, volume, setCurrentMusic } = usePlayerStore(state => state)
   const audioRef = useRef()
+  const [ rand, setRand] = useState(false)
 
   useEffect(() => {
     isPlaying
@@ -155,6 +155,10 @@ export function Player () {
       audioRef.current.play()
     }
   }, [currentMusic.song])
+
+  useEffect(() => {
+    setRand(false)
+  }, [currentMusic.songs])
 
   const handleClick = () => {
     if(!currentMusic.song){
@@ -186,6 +190,15 @@ export function Player () {
     setCurrentMusic({ ...currentMusic, song: nextSong })
     setIsPlaying(true)
   }
+  const handleRandom = () => {
+    if(rand === true) return
+    const randMusic = [...currentMusic.songs].sort(() => Math.random() - 0.5)
+    randMusic.splice(randMusic.indexOf(currentMusic.song), 1)
+    setCurrentMusic({...currentMusic, songs: [currentMusic.song, randMusic].flat()})
+    setTimeout(() => {
+      setRand(prev => !prev)
+    }, 100)
+  }
 
   return (
     <div className="flex flex-row justify-between w-full p-0 md:p-2 z-50">
@@ -196,6 +209,15 @@ export function Player () {
       <div className="grid place-content-center gap-4 flex-1 w-[150px] md:w-auto mr-8">
         <div className="flex justify-center flex-col items-center gap-2">
           <div className="flex flex-row justify-center items-center gap-2 md:gap-4">
+          <button style={{color: "black"}} className="rounded-full pb-1 w-10 h-10" onClick={handleRandom}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrows-shuffle transition-all duration-300" width="38" height="38" viewBox="0 0 24 24" stroke={rand ? "#00b341" : "#fff"} fill="none">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 4l3 3l-3 3" />
+            <path d="M18 20l3 -3l-3 -3" />
+            <path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h5" />
+            <path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3" />
+          </svg>
+            </button>
             <button style={{color: "black"}} className="bg-white rounded-full p-2 w-10 h-10" onClick={handleLeft}>
               &lt;
             </button>

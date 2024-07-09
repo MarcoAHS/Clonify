@@ -67,7 +67,7 @@ export const playlists: Playlist[] = [
   {
     id: '7',
     albumId: 7,
-    title: "All Songs",
+    title: "Gym Playlist",
     color: colors.teal,
     cover:
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
@@ -76,8 +76,8 @@ export const playlists: Playlist[] = [
   {
     id: '8',
     albumId: 8,
-    title: "All Songs",
-    color: colors.teal,
+    title: "Anime Playlist",
+    color: colors.gray,
     cover:
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
     artists: ["Bucki", "Eminem"],
@@ -85,8 +85,8 @@ export const playlists: Playlist[] = [
   {
     id: '9',
     albumId: 9,
-    title: "All Songs",
-    color: colors.teal,
+    title: "Rap Playlist",
+    color: colors.red,
     cover:
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
     artists: ["Bucki", "Eminem"],
@@ -94,8 +94,8 @@ export const playlists: Playlist[] = [
   {
     id: '10',
     albumId: 10,
-    title: "All Songs",
-    color: colors.teal,
+    title: "Pop Playlist",
+    color: colors.emerald,
     cover:
       "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7fd92108782021.5fc5820ec90ba.png",
     artists: ["Bucki", "Eminem"],

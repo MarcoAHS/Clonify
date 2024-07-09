@@ -3,7 +3,7 @@ export function PlayListItemCard({ playlist }){
     const { id, cover, title, artists, color } = playlist
     const artistString = artists.join(', ')
     return (
-        <section className="group relative">
+        <section className="group relative py-4">
             <div
             className="absolute right-4 bottom-20 translate-y-4
             transition-all duration-500 opacity-0

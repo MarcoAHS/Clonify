@@ -3,7 +3,13 @@
   "description": "A clone of spotify with educational purposes, made with Astro, React, TailwindCSS, Zustand and Typescript",
   "type": "module",
   "version": "0.0.1",
-  "keywords": ["Astro", "Clon de Spotify", "Zustand", "React", "Tailwind"],
+  "keywords": [
+    "Astro",
+    "Clon de Spotify",
+    "Zustand",
+    "React",
+    "Tailwind"
+  ],
   "author": "marcoahs",
   "homepage": "https://elaborate-sopapillas-9fc246.netlify.app/",
   "repository": {
@@ -22,6 +28,8 @@
     "@astrojs/react": "^3.6.0",
     "@astrojs/svelte": "^5.6.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@mui/base": "^5.0.0-beta.40",
+    "@mui/system": "^5.16.0",
     "@radix-ui/react-slider": "^1.1.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
