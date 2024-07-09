@@ -1,12 +1,11 @@
 ---
-import { type Song } from "../lib/data"
+import { type Song, playlists } from "../lib/data"
 import { SongPlayer } from "./SongPlayer"
 import { SongPlayButton } from "./SongPlayButton"
 
 interface Props {
   songs: Song[]
 }
-
 const { songs } = Astro.props
 ---
 

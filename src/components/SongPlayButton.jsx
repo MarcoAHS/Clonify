@@ -8,27 +8,31 @@ export function SongPlayButton({ song: songParam }){
         setIsPlaying,
         setCurrentMusic
     } = usePlayerStore(state => state)
-    const [ anchor, setAnchor ] = useState("")
+    const color = playlists.filter(playlist => playlist.albumId === songParam.albumId)[0].color.dark
+    const [ anchor, setAnchor ] = useState("transparent")
     const cancion = songs.filter(song => song.id === songParam.id  && song.albumId === songParam.albumId)
     const handleClick = () => {
         if(currentMusic.song == null){
             setCurrentMusic({songs: [cancion[0]], song: cancion[0]})
             setIsPlaying(true)
+            setAnchor(color)
         } else{
             if(currentMusic.songs.filter(i => i.id === songParam.id && i.albumId === songParam.albumId).length > 0) {
                 //repetida
-                return
+                setAnchor("red")
+            }else{
+                setCurrentMusic({songs: [...currentMusic.songs, cancion[0]], song: currentMusic.song})
+                setAnchor(color)
             }
-            setCurrentMusic({songs: [...currentMusic.songs, cancion[0]], song: currentMusic.song})
         }
-        setAnchor("bg-green-600/70")
         setTimeout(() => {
             setAnchor("")
-        }, 200)
+        }, 500)
+
     }
     return (
         <>
-        <button onClick={handleClick} className={`${anchor} card-play-button rounded-full bg-transparent px-4 py-3 hover:scale-105 transition-all duration-[100ms]`}>
+        <button onClick={handleClick} style={{backgroundColor: anchor}} className="card-play-button rounded-full px-4 py-3 transition-all duration-[300ms]">
             +
         </button>
         </>
