@@ -12,8 +12,8 @@ export function Buscador(){
     return(
         <>
         <div className="relative z-10 pb-6">
-        <h2 className="text-2xl font-semibold">Find Your Next Favorite Music</h2>
-        <div className="relative mb-6 mt-5 ml-5">
+        <h2 className="text-2xl font-semibold mb-4">Find Your Next Favorite Music</h2>
+        <div className="relative mb-3 lg:mb-6 ml-5">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
         <svg
             role="img"
@@ -32,7 +32,7 @@ export function Buscador(){
         {album.length > 0 && 
         <>
             <h2 className="relative z-10 ml-5 mb-4 text-2xl font-semibold">Albums/Playlist</h2>
-            <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-center lg:justify-start max-w-[80dvw] overflow-auto">
+            <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-start max-w-[80dvw] overflow-auto">
                 {album.map(item => <PlayListItemCard key={item.id} client:load playlist={item} />)}
             </div>
         </>
@@ -40,7 +40,7 @@ export function Buscador(){
         {artists.length > 0 && 
         <>
             <h2 className="relative z-10 ml-5 mb-4 text-2xl font-semibold">Artistas</h2>
-            <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-center lg:justify-start max-w-[80dvw] overflow-auto">
+            <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-start max-w-[80dvw] overflow-auto">
                 {artists.map(item => <PlayListItemCard key={item.id} client:load playlist={item} />)}
             </div>
         </>

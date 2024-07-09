@@ -23,7 +23,7 @@ export function CardPlayButton ({ id, size = 'small' }) {
   }
 
   return (
-    <button style={{backgroundColor: color}} onClick={handleClick} className="card-play-button rounded-full bg-green-500 p-4 hover:scale-105 transition hover:bg-green-400">
+    <button style={{backgroundColor: color}} onClick={handleClick} className="card-play-button rounded-full p-4 md:p-6 mt-[-3rem] hover:scale-105 transition">
       {isPlayingPlaylist ? <Pause/> : <Play/>}
     </button>
   )
