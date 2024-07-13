@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PlaylistItemCard from '../components/PlaylistItemCard.astro'
+import { PlayListItemCard } from '../components/PlaylistItemCard.jsx'
 
 import { playlists } from '../lib/data';
 ---
@@ -11,8 +11,8 @@ import { playlists } from '../lib/data';
     class="transition-all duration-1000 overflow-auto p-4 bg-green-600 h-full"
     id="playlist-container">
     <h2 class="text-2xl mb-4 font-bold">Good Morning</h2>
-        <div class="relative z-10 px-6 flex gap-4 flex-wrap justify-center lg:justify-start">
-            {playlists.map(playlist => <PlaylistItemCard playlist={playlist}/>)}
+        <div class="relative z-10 px-0 md:px-6 flex gap-4 flex-wrap justify-center lg:justify-start">
+            {playlists.map(playlist => <PlayListItemCard playlist={playlist}/>)}
         </div>
     </div>
 </Layout>

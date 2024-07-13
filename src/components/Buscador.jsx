@@ -2,11 +2,11 @@ import { useState } from "react"
 import { PlayListItemCard } from "../components/PlaylistItemCard.jsx"
 import { playlists } from '../lib/data';
 export function Buscador(){
-    const [ album, setAlbum ] = useState(playlists)
+    // const [ album, setAlbum ] = useState(playlists)
     const [ artists, setArtists ] = useState(playlists)
     const handleUpdate = (e) => {
         var matcher = e.target.value.toUpperCase();
-        setAlbum([...playlists].filter(item => item.title.toUpperCase().includes(matcher)))
+        // setAlbum([...playlists].filter(item => item.title.toUpperCase().includes(matcher)))
         setArtists([...playlists].filter(item => item.artists.filter(i => (i.toUpperCase().includes(matcher))).length > 0 ? true : false))
     }
     return(
@@ -29,19 +29,23 @@ export function Buscador(){
         <input type="text" id="search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-[300px] ps-12 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Looking for a Album?" onChange={handleUpdate}/>
         </div>
         </div>
-        {album.length > 0 && 
+        {/* {album.length > 0 && 
         <>
             <h2 className="relative z-10 ml-5 mb-4 text-2xl font-semibold">Albums/Playlist</h2>
             <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-start max-w-[80dvw] overflow-auto">
-                {album.map(item => <PlayListItemCard key={item.id} client:load playlist={item} />)}
+                {album.map(item => (
+                    <PlayListItemCard key={item.id} playlist={item} />
+                ))}
             </div>
         </>
-        }
+        } */}
         {artists.length > 0 && 
         <>
-            <h2 className="relative z-10 ml-5 mb-4 text-2xl font-semibold">Artistas</h2>
+            <h2 className="relative z-10 ml-5 mb-4 text-2xl font-semibold">Playlist by Your Artist Search</h2>
             <div style={{scrollbarWidth: "thin"}} className="relative z-10 px-6 flex gap-4 justify-start max-w-[80dvw] overflow-auto">
-                {artists.map(item => <PlayListItemCard key={item.id} client:load playlist={item} />)}
+                {artists.map(item => (
+                    <PlayListItemCard key={item.id} playlist={item} />
+                ))}
             </div>
         </>
         }
